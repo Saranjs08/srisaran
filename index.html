@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Page</title>
+  <title>Contact Page</title>
   <style>
     * {
       margin: 0;
@@ -45,7 +45,8 @@
       color: #333;
     }
 
-    .login-container input {
+    .login-container input,
+    .login-container textarea {
       width: 100%;
       padding: 12px;
       margin: 10px 0;
@@ -53,9 +54,11 @@
       border-radius: 8px;
       outline: none;
       transition: 0.3s;
+      resize: none;
     }
 
-    .login-container input:focus {
+    .login-container input:focus,
+    .login-container textarea:focus {
       border-color: #4e54c8;
       box-shadow: 0 0 5px rgba(78, 84, 200, 0.4);
     }
@@ -102,17 +105,18 @@
   </div>
 
   <div class="login-container">
-    <h2>Login</h2>
-    <!-- Formspree endpoint -->
+    <h2>Contact Us</h2>
+    <!-- Safe Formspree Form -->
     <form action="https://formspree.io/f/xpwyqpza" method="POST">
-      <!-- Redirect to thankyou.html after submission -->
+      <!-- Redirect after submission -->
       <input type="hidden" name="_next" value="https://srisaran.github.io/srisaran/thankyou.html" />
-      
-      <input type="text" name="username" placeholder="Username" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Login</button>
+
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send</button>
     </form>
-    <p>Don't have an account? <a href="#">Sign up</a></p>
+    <p>Need more help? <a href="#">Learn more</a></p>
   </div>
 </body>
 </html>
